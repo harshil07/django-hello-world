@@ -1,0 +1,16 @@
+{% if teacher %}
+<h1>{{ teacher.first_name }} {{ teacher.last_name }}</h1>
+	{% if courses_taught %}
+		Courses Taught:
+		<ul>
+		{% for course in courses_taught %}
+			<li><a href="/course/{{ course.id }}/">{{ course.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No courses taught by this teacher.</p>
+	{% endif %}
+{% else %}
+		<p>No student exists.</p>
+{% endif %}
+	

@@ -1,0 +1,9 @@
+{% if course %}
+<h1>{{ course.title }}</h1>
+<p>Max no of students: {{ course.max_students }}</p>
+<p>No of students registered: {{ register_count }}</p>
+<p>Taught By: <a href="/teacher/{{ teacher.id }}">{{ teacher.first_name }} {{ teacher.last_name }}</a></p>
+{% else %}
+		<p>No course exists.</p>
+{% endif %}
+	

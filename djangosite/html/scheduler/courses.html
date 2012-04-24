@@ -1,0 +1,10 @@
+<h1>Course Catalog</h1>
+{% if course_list %}
+    <ul>
+    {% for course in course_list %}
+        <li><a href="/course/{{ course.id }}/">{{ course.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No courses exist.</p>
+{% endif %}

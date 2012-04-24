@@ -1,0 +1,16 @@
+{% if student %}
+<h1>{{ student.first_name }} {{ student.last_name }}</h1>
+	{% if registered_courses %}
+		Registered Courses:
+		<ul>
+		{% for course in registered_courses %}
+			<li><a href="/course/{{ course.id }}/">{{ course.title }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>No registered courses exist.</p>
+	{% endif %}
+{% else %}
+		<p>No student exists.</p>
+{% endif %}
+	
